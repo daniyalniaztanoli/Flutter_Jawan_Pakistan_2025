@@ -1,3 +1,4 @@
+import 'dart:io';
 void main() {
   // Q.1
   List<String> names = ['Daniyal', 'Niaz', 'Noman', 'Ahmed'];
@@ -175,4 +176,25 @@ void main() {
   print(
     shoppingCart.containsKey('Apple') ? 'Product found' : 'Product not found',
   );
+
+  // class work Task........................
+  print("Do you want a table? (Yes or No):");
+  String? permission = stdin.readLineSync();
+
+  if (permission != null && permission.toLowerCase() == 'yes') {
+    print("Enter Table Number:");
+    String? input = stdin.readLineSync();
+    if (input != null && int.tryParse(input) != null) {
+      int table = int.parse(input);
+      print("\nTable of $table:");
+      for (int i = 1; i <= 10; i++) {
+        print("$table x $i = ${table * i}");
+      }
+    } else {
+      print("Invalid table number.");
+    }
+  } else {
+    print("Okay, no table will be shown.");
+  }
 }
+
